@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love ❤️ - Letter Delivery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    overflow:hidden;
+    color:white;
+    text-align:center;
+    position:relative;
+}
+
+.container{
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+    animation:fadeIn 2s ease;
+    z-index:5;
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    font-size:3rem;
+    animation:glow 2s infinite alternate;
+    margin-bottom:30px;
+}
+
+.photo-wrapper{
+    width:250px;
+    height:250px;
+    margin:0 auto 30px;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(255,255,255,0.8);
+    animation:photoGlow 3s infinite alternate, zoomIn 2s ease;
+    border:5px solid white;
+}
+
+.photo-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes photoGlow{
+    from{box-shadow:0 0 20px #fff;}
+    to{box-shadow:0 0 45px #ffd1dc;}
+}
+
+@keyframes zoomIn{
+    from{transform:scale(0.5);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+p{
+    font-size:1.2rem;
+    margin:15px auto 30px;
+    max-width:600px;
+    opacity:0;
+    animation:slideUp 2s forwards;
+    animation-delay:1.5s;
+    line-height:1.6;
+    padding:0 20px;
+}
+
+button{
+    margin-top:10px;
+    padding:18px 40px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4f8b;
+    cursor:pointer;
+    animation:pulse 1.5s infinite;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:all 0.3s ease;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:0 auto;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+button:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+    animation:none;
+}
+
+/* Animations */
+@keyframes glow{
+    from{text-shadow:0 0 10px #fff;}
+    to{text-shadow:0 0 25px #fff, 0 0 35px #ff4f8b;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(30px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+/* Boy character */
+.boy-container{
+    position:fixed;
+    width:150px;
+    height:220px;
+    bottom:0;
+    left:-200px;
+    z-index:10;
+    transition:left 2s ease-in-out, right 2s ease-in-out;
+}
+
+.boy{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.boy-head{
+    position:absolute;
+    width:60px;
+    height:60px;
+    background:linear-gradient(to bottom, #ffcc99, #ff9966);
+    border-radius:50%;
+    top:0;
+    left:45px;
+    z-index:2;
+    animation:headTilt 3s infinite alternate;
+}
+
+.boy-hair{
+    position:absolute;
+    width:70px;
+    height:30px;
+    background:#8B4513;
+    border-radius:50% 50% 0 0;
+    top:-15px;
+    left:40px;
+    z-index:1;
+}
+
+.boy-eye{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:#333;
+    border-radius:50%;
+    top:20px;
+}
+
+.boy-eye-left{
+    left:15px;
+}
+
+.boy-eye-right{
+    right:15px;
+}
+
+.boy-smile{
+    position:absolute;
+    width:30px;
+    height:15px;
+    border:3px solid #333;
+    border-top:none;
+    border-radius:0 0 30px 30px;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.boy-body{
+    position:absolute;
+    width:70px;
+    height:90px;
+    background:linear-gradient(to bottom, #2196F3, #0D47A1);
+    top:60px;
+    left:40px;
+    border-radius:25px 25px 10px 10px;
+    z-index:1;
+}
+
+.boy-arm{
+    position:absolute;
+    width:18px;
+    height:75px;
+    background:linear-gradient(to bottom, #ffcc99, #ff9966);
+    top:65px;
+    border-radius:10px;
+    z-index:0;
+}
+
+.boy-arm-left{
+    left:30px;
+    transform-origin:top center;
+    animation:armSwing 1s infinite alternate;
+}
+
+.boy-arm-right{
+    right:30px;
+    transform:rotate(-30deg);
+    transform-origin:top center;
+}
+
+.boy-leg{
+    position:absolute;
+    width:22px;
+    height:80px;
+    background:linear-gradient(to bottom, #0D47A1, #00008B);
+    top:150px;
+    border-radius:15px 15px 0 0;
+}
+
+.boy-leg-left{
+    left:45px;
+    animation:legWalk 0.6s infinite alternate;
+}
+
+.boy-leg-right{
+    right:45px;
+    animation:legWalk 0.6s infinite alternate 0.3s;
+}
+
+/* Letter in hand */
+.letter-hand{
+    position:absolute;
+    width:60px;
+    height:80px;
+    background:white;
+    border:4px solid #ff1493;
+    top:30px;
+    right:-40px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    color:#ff1493;
+    box-shadow:5px 5px 15px rgba(0,0,0,0.2);
+    z-index:3;
+    transform:rotate(20deg);
+    transform-origin:bottom left;
+    transition:opacity 0.5s ease;
+}
+
+.letter-hand-flap{
+    position:absolute;
+    width:60px;
+    height:25px;
+    background:#ffd6e7;
+    top:-12px;
+    left:-4px;
+    border-radius:10px 10px 0 0;
+    border:4px solid #ff1493;
+    border-bottom:none;
+    transform-origin:bottom;
+}
+
+.letter-heart{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    color:#ff1493;
+    font-size:18px;
+}
+
+/* Big letter that appears */
+.big-letter{
+    position:fixed;
+    width:350px;
+    max-width:90vw;
+    height:450px;
+    background:white;
+    border:10px solid #ff1493;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) scale(0);
+    border-radius:20px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.4);
+    z-index:100;
+    transition:transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+.big-letter.open{
+    display:flex;
+    transform:translate(-50%, -50%) scale(1);
+}
+
+.letter-top{
+    height:40%;
+    background:linear-gradient(to bottom, #fff0f6, #ffd6e7);
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    border-bottom:5px dashed #ff69b4;
+}
+
+.letter-flap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ffd6e7;
+    top:0;
+    left:0;
+    border:10px solid #ff1493;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    transform-origin:top;
+    transition:transform 1s ease 0.5s;
+}
+
+.letter-flap.open{
+    transform:rotateX(-180deg);
+}
+
+.letter-bottom{
+    height:60%;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.letter-heart-large{
+    color:#ff1493;
+    font-size:50px;
+    margin-bottom:20px;
+    animation:heartbeat 1.2s infinite;
+}
+
+.letter-title{
+    color:#ff1493;
+    font-size:2rem;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.letter-message{
+    color:#ff4081;
+    font-size:1.2rem;
+    line-height:1.8;
+    max-height:200px;
+    overflow-y:auto;
+    padding-right:10px;
+}
+
+.close-letter{
+    position:absolute;
+    top:15px;
+    right:20px;
+    background:none;
+    border:none;
+    color:#ff1493;
+    font-size:30px;
+    cursor:pointer;
+    padding:0;
+    margin:0;
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:none;
+}
+
+.close-letter:hover{
+    transform:scale(1.2);
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:50;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation:float 6s linear infinite;
+    z-index:1;
+}
+
+@keyframes float{
+    0%{bottom:-10%;opacity:0; transform:translateX(0);}
+    10%{opacity:1;}
+    90%{opacity:1;}
+    100%{bottom:110%;opacity:0; transform:translateX(50px);}
+}
+
+/* Boy animations */
+@keyframes headTilt{
+    0%, 100%{transform:rotate(0deg);}
+    50%{transform:rotate(5deg);}
+}
+
+@keyframes armSwing{
+    0%{transform:rotate(-40deg);}
+    100%{transform:rotate(10deg);}
+}
+
+@keyframes legWalk{
+    0%{transform:translateY(0) rotate(0deg);}
+    100%{transform:translateY(-15px) rotate(15deg);}
+}
+
+@keyframes heartbeat{
+    0%, 100%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+}
+
+/* Confetti */
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+   
+    top:-10px;
+    animation:fall 3s linear forwards;
+    z-index:2;
+}
+
+@keyframes fall{
+    to{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* Message display */
+.message-display{
+    margin-top:20px;
+    min-height:30px;
+    font-size:1.3rem;
+    color:#fff;
+    font-weight:bold;
+    opacity:0;
+    transition:opacity 0.5s ease;
+}
+
+.message-display.show{
+    opacity:1;
+}
+
+/* Mobile responsive */
+@media(max-width:768px){
+    h1{font-size:2.2rem;}
+    .photo-wrapper{width:200px; height:200px;}
+    p{font-size:1rem;}
+    button{padding:15px 30px; font-size:1rem;}
+    .big-letter{height:400px;}
+    .letter-bottom{padding:25px;}
+    .letter-title{font-size:1.6rem;}
+    .letter-message{font-size:1rem;}
+}
+
+@media(max-width:480px){
+    h1{font-size:1.8rem;}
+    .photo-wrapper{width:150px; height:150px;}
+    .boy-container{transform:scale(0.8);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="container">
+    <h1>Happy Birthday My Love ❤️</h1>
+    
+    <div class="photo-wrapper">
+        <img src="ChatGPT Image Dec 23, 2025, 06_45_43 PM.png" alt="My Love">
+    </div>
+
+    <p>
+        You are the reason behind my smile 😊  
+        Thank you for filling my life with love, joy and happiness 💕  
+        I love you forever 💖
+    </p>
+    
+    <button id="surpriseBtn">
+        <i class="fas fa-gift"></i> Open Your Birthday Letter <i class="fas fa-gift"></i>
+    </button>
+    
+    <div class="message-display" id="messageDisplay"></div>
+</div>
+
+<!-- Boy character -->
+<div class="boy-container" id="boyContainer">
+    <div class="boy">
+        <div class="boy-hair"></div>
+        <div class="boy-head">
+            <div class="boy-eye boy-eye-left"></div>
+            <div class="boy-eye boy-eye-right"></div>
+            <div class="boy-smile"></div>
+        </div>
+        <div class="boy-body"></div>
+        <div class="boy-arm boy-arm-left"></div>
+        <div class="boy-arm boy-arm-right"></div>
+        <div class="boy-leg boy-leg-left"></div>
+        <div class="boy-leg boy-leg-right"></div>
+        
+        <!-- Letter in hand -->
+        <div class="letter-hand" id="letterHand">
+            <div class="letter-hand-flap"></div>
+            <i class="fas fa-envelope"></i>
+            <div class="letter-heart">❤️</div>
+        </div>
+    </div>
+</div>
+
+<!-- Big letter that opens -->
+<div class="big-letter" id="bigLetter">
+    <button class="close-letter" id="closeLetter">&times;</button>
+    
+    <div class="letter-top">
+        <div class="letter-flap" id="letterFlap"></div>
+        <div class="letter-heart-large">💌</div>
+        <div class="letter-title">To My Dearest Love 💕</div>
+    </div>
+    
+    <div class="letter-bottom">
+        <div class="letter-message" id="loveMessage">
+            My dearest love,<br><br>
+            
+            On this special day, I want to tell you how incredibly grateful I am to have you in my life. 
+            Your smile lights up my world, your laughter is my favorite melody, and your love is the greatest gift I've ever received.<br><br>
+            
+            Happy Birthday to the most beautiful soul I know! May this year bring you all the happiness, success, and love you deserve. 
+            Every moment with you is a treasure, and I look forward to celebrating many more birthdays together.<br><br>
+            
+            You are my today and all of my tomorrows. I love you more than words can express.<br><br>
+            
+            Forever yours,<br>
+            Your loving boyfriend ❤️
+        </div>
+    </div>
+</div>
+
+<script>
+// Generate floating hearts
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    heart.style.fontSize = (Math.random() * 15 + 15) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+
+// Create confetti
+function createConfetti(){
+    for(let i = 0; i < 80; i++){
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.width = Math.random() * 10 + 5 + "px";
+        confetti.style.height = Math.random() * 10 + 5 + "px";
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        confetti.style.animationDelay = Math.random() * 1 + "s";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+    }
+}
+
+// DOM Elements
+const surpriseBtn = document.getElementById("surpriseBtn");
+const boyContainer = document.getElementById("boyContainer");
+const letterHand = document.getElementById("letterHand");
+const bigLetter = document.getElementById("bigLetter");
+const letterFlap = document.getElementById("letterFlap");
+const overlay = document.getElementById("overlay");
+const closeLetter = document.getElementById("closeLetter");
+const messageDisplay = document.getElementById("messageDisplay");
+const loveMessage = document.getElementById("loveMessage");
+
+// Romantic messages
+const romanticMessages = ["   Happy birthday 🥳🎂🥳 Madhumitha nee keta gift thara mudiyala athuku sorry first uh epovum happy ah iru ellathukum alaama face pannu kovatha kami pannu unnaku pudichatha sei na support panra nee thookathula pesurathu ennaku romba pudikum na ipo sonnanu atha pannama irukatha ethachi sollanum na apovehh solliru na purichipen un birthday matum illa unkuda irukura ella moment um happy moment tha once again happy birthday my wife ."
+];
+
+// Animation messages
+const animationMessages = [
+    "Your surprise is on the way...",
+    "Look who's coming with a letter!",
+    "A special delivery for you...",
+    "Opening your birthday love letter...",
+    "Happy Birthday my love! 💝"
+];
+
+let isAnimating = false;
+
+// Update message display
+function updateMessage(message) {
+    messageDisplay.textContent = message;
+    messageDisplay.classList.add("show");
+    
+    setTimeout(() => {
+        messageDisplay.style.opacity = "1";
+    }, 100);
+}
+
+// Reset animation
+function resetAnimation() {
+    boyContainer.style.left = "-200px";
+    boyContainer.style.right = "auto";
+    letterHand.style.opacity = "1";
+    bigLetter.classList.remove("open");
+    letterFlap.classList.remove("open");
+    overlay.classList.remove("show");
+    messageDisplay.classList.remove("show");
+}
+
+// Start the letter delivery animation
+surpriseBtn.addEventListener("click", function() {
+    if (isAnimating) return;
+    
+    isAnimating = true;
+    
+    // Disable button
+    surpriseBtn.disabled = true;
+    surpriseBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing Your Surprise...';
+    
+    // Reset animation
+    resetAnimation();
+    
+    // Select random romantic message
+    const randomMessage = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+    loveMessage.innerHTML = randomMessage;
+    
+    // Step 1: Initial message
+    updateMessage(animationMessages[0]);
+    
+    // Step 2: Boy walks in (after 500ms)
+    setTimeout(() => {
+        updateMessage(animationMessages[1]);
+        boyContainer.style.left = "calc(50% - 75px)";
+        createConfetti();
+    }, 500);
+    
+    // Step 3: Hide letter in hand (after 2.5s)
+    setTimeout(() => {
+        updateMessage(animationMessages[2]);
+        letterHand.style.opacity = "0";
+    }, 2500);
+    
+    // Step 4: Show big letter (after 3.5s)
+    setTimeout(() => {
+        updateMessage(animationMessages[3]);
+        overlay.classList.add("show");
+        bigLetter.classList.add("open");
+        
+        // Open letter flap after delay
+        setTimeout(() => {
+            letterFlap.classList.add("open");
+        }, 800);
+    }, 3500);
+    
+    // Step 5: Final message (after 5s)
+    setTimeout(() => {
+        updateMessage(animationMessages[4]);
+        
+        // Re-enable button
+        isAnimating = false;
+        surpriseBtn.disabled = false;
+        surpriseBtn.innerHTML = '<i class="fas fa-redo"></i> Watch Again';
+    }, 5000);
+});
+
+// Close letter button
+closeLetter.addEventListener("click", function() {
+    bigLetter.classList.remove("open");
+    overlay.classList.remove("show");
+    
+    // Boy walks out
+    boyContainer.style.left = "100%";
+    
+    // After boy leaves, reset position
+    setTimeout(() => {
+        resetAnimation();
+    }, 2000);
+});
+
+// Close letter when clicking overlay
+overlay.addEventListener("click", function() {
+    closeLetter.click();
+});
+
+// Add keyboard support (ESC to close letter)
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && bigLetter.classList.contains("open")) {
+        closeLetter.click();
+    }
+});
+
+// Auto-play some confetti on page load
+window.addEventListener("load", function() {
+    setTimeout(() => {
+        createConfetti();
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
